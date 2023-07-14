@@ -1,0 +1,24 @@
+<div *ngIf="showDefault">
+    <div align="center">
+        <button class="dateButton" *ngFor="let date of dates" [class.active]="date === selectedDate"
+            (click)="filterMatches(date)">
+            <p>{{ date | date: 'EEE, d MMM' }}</p>
+        </button>
+    </div>
+    <table align="center">
+        <div *ngFor="let match of filteredMatches" align="center">
+            <h3>{{ match.Country }} {{match.LeagueName}}</h3>
+            <ul style="padding-left: 0px;" *ngFor="let match of filteredMatches"
+                (click)="onRowClick(match.MatchId, match.MatchDate, match.MatchName)">
+                {{ match.Team1Name }} {{match.KickOffUtc.toLocaleString() | date: 'HH:mm' }} {{match.Team2Name}}
+                <hr>
+            </ul>
+        </div>
+    </table>
+</div>
+
+
+<div *ngIf="showMatchDetails">
+    <app-match-information [matchId]="passingMatchId" [headerDate]="passingDate" [matchName]="passingMatchName"
+        (backEvent)="goToHome()"></app-match-information>
+</div>

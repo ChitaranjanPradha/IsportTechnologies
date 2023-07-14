@@ -1,0 +1,57 @@
+<button (click)="back()" class="backBtn">
+  <i class="fa-solid fa-arrow-left"></i>
+</button>
+
+<div align="center">
+  <h1>Bet Builter Fixture</h1>
+</div>
+
+<div class="container" align="center">
+  <div style="width: 25%; background-color: red; color: white;">{{headerDate | date: 'MMM dd, YYYY, h:mm'}} </div>
+  <div style="width: 25%; background-color: black; color: white;">{{matchName}}</div>
+</div>
+
+<div class="container2">
+  <div style="display: flex;">
+    <p>Market : </p>
+    <select (change)="onMarketSelectionChange($event)" style="    float: right;
+    height: 27px;
+    width: 167px;
+    margin-right: 22px;
+    margin-top: 12px;">
+      <option *ngFor="let market of marketArray" [value]="market.MarketId">{{ market.MarketName }}</option>
+    </select>
+  </div>
+  <div style="display: flex;">
+    <p>Selection : </p>
+    <select (change)="onLegSelectionChange($event)" style="    float: right;
+      height: 27px;
+      width: 167px;
+      margin-right: 22px;
+      margin-top: 12px;">
+      <option *ngFor="let leg of legsArray" [value]="leg.selectionId">{{ leg.selectionValue }}</option>
+    </select>
+  </div>
+
+</div>
+<!-- <table>
+
+  <ng-container>
+    <th > Key Stats </th>
+    <td *ngFor="let element of betBuilderArray"> {{element.MatchId}} </td>
+  </ng-container>
+
+  <ng-container>
+    <th> Market </th>
+    <td *ngFor="let element of betBuilderArray"> {{element.Legs}} </td>
+  </ng-container>
+
+  <ng-container >
+    <th> Outcome </th>
+    <td  *ngFor="let element of betBuilderArray"> {{element.SelectionMarketId}} </td>
+  </ng-container>
+</table> -->
+<!-- <div *ngFor="let item of betBuilderArray"> -->
+<!-- Display each item here -->
+<!-- {{item.SelectionMarketId}}
+</div> -->

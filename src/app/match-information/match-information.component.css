@@ -1,0 +1,28 @@
+h1{
+    background-color: rgb(245, 0, 0);
+    color: white;
+    text-align: center;
+    width: 50%;
+}
+.header{
+    background-color: black;
+    color: white;
+
+}
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+  }
+.container2{
+    display: flex;
+    justify-content: center;
+}
+.backBtn{
+    margin-left: 25%;
+    border-color: red;
+    border-radius:50px;
+    color: white;
+    background-color: red;
+}
