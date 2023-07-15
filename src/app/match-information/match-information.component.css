@@ -1,8 +1,11 @@
-h1{
+.buileder{
     background-color: rgb(245, 0, 0);
     color: white;
-    text-align: center;
-    width: 50%;
+    width: 43%;
+    margin-left: 25%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    padding-left: 7%;
 }
 .header{
     background-color: black;
