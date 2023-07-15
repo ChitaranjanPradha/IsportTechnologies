@@ -5,6 +5,9 @@
             <p>{{ date | date: 'EEE, d MMM' }}</p>
         </button>
     </div>
+    <div style="margin-left: 26%;">
+        <p style="margin-bottom: -20px;">Football</p>
+    </div>
     <table align="center">
         <div *ngFor="let match of filteredMatches" align="center">
             <h3>{{ match.Country }} {{match.LeagueName}}</h3>
