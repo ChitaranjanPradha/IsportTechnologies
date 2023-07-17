@@ -42,14 +42,16 @@
 
 <table align="center">
   <tr>
-    <th style="border-top-left-radius: 20px;">Ket Stats</th>
+    <th style="border-top-left-radius: 20px;">Pick</th>
     <th>Market</th>
-    <th style="border-top-right-radius: 20px;">Outcome</th>
+    <th>Outcome</th>
+    <th style="border-top-right-radius: 20px;">Ket Stats</th>
   </tr>
 
-  <tr *ngFor="let element of betBuilderArray.BetBuilderSelections">
-    <td>{{ element.RTB }}</td>
-    <td>{{ element.Market}}</td>
-    <td>{{element.Selection}}</td>
+  <tr *ngFor="let element of betBuilderArray.BetBuilderSelections; let i=index">
+    <td >{{i+1}}</td>
+    <td>{{ element.Market }}</td>
+    <td>{{ element.Selection}}</td>
+    <td>{{element.RTB}}</td>
   </tr>
 </table>
