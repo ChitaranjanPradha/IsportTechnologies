@@ -2,13 +2,16 @@
   <i class="fa-solid fa-arrow-left"></i>
 </button>
 
-<div >
+<div>
   <h3 class="buileder">Make It A Bet Builder?</h3>
 </div>
 
 <div class="container" align="center">
-  <div style="width: 25%; background-color: red; color: white; padding-top: 1%; padding-bottom: 1%;">{{headerDate | date: 'MMM dd, YYYY, h:mm'}} </div>
-  <div style="width: 25%; background-color: black; color: white; padding-top: 1%; padding-bottom: 1%;">{{matchName}}</div>
+  <div style="width: 25%; background-color: red; color: white; padding-top: 1%; padding-bottom: 1%;">{{headerDate |
+    date: 'MMM dd, YYYY'}} <br> {{headerDate | date: 'hh:mm'}}</div>
+  <div style="width: 25%; background-color: black; color: white; padding-top: 1%; padding-bottom: 1%;">{{matchName}}
+    <br>{{leagName}}
+  </div>
 </div>
 
 <div class="container2">
@@ -32,26 +35,21 @@
       <option *ngFor="let leg of legsArray" [value]="leg.selectionId">{{ leg.selectionValue }}</option>
     </select>
   </div>
-
 </div>
-<!-- <table>
+<div style="margin-left: 30%;">
+  <p>Bet Builder Odds: {{betBuilderArray.TotalOdds}}</p>
+</div>
 
-  <ng-container>
-    <th > Key Stats </th>
-    <td *ngFor="let element of betBuilderArray"> {{element.MatchId}} </td>
-  </ng-container>
+<table align="center">
+  <tr>
+    <th style="border-top-left-radius: 20px;">Ket Stats</th>
+    <th>Market</th>
+    <th style="border-top-right-radius: 20px;">Outcome</th>
+  </tr>
 
-  <ng-container>
-    <th> Market </th>
-    <td *ngFor="let element of betBuilderArray"> {{element.Legs}} </td>
-  </ng-container>
-
-  <ng-container >
-    <th> Outcome </th>
-    <td  *ngFor="let element of betBuilderArray"> {{element.SelectionMarketId}} </td>
-  </ng-container>
-</table> -->
-<!-- <div *ngFor="let item of betBuilderArray"> -->
-<!-- Display each item here -->
-<!-- {{item.SelectionMarketId}}
-</div> -->
+  <tr *ngFor="let element of betBuilderArray.BetBuilderSelections">
+    <td>{{ element.RTB }}</td>
+    <td>{{ element.Market}}</td>
+    <td>{{element.Selection}}</td>
+  </tr>
+</table>

@@ -18,7 +18,7 @@ export class MatchHomeComponent {
   dates: string[] = [];
   filteredMatches: any[] = [];
   originalData: any[] = [];
-  passingMatchId!: number;
+  leagueName!: string;
   passingDate!: Date;
   passingMatchName!: string;
 
@@ -63,8 +63,8 @@ export class MatchHomeComponent {
     this.filteredMatches = this.originalData.filter(m => m.MatchDate.slice(0, 9) === utcFormatted);
   }
 
-  onRowClick(matchId: number, matchDate: Date, matchName: string) {
-    this.passingMatchId = matchId;
+  onRowClick(countryName: string, leagueName:string, matchDate: Date, matchName: string) {
+    this.leagueName = countryName+ " " + leagueName;
     this.passingDate = matchDate;
     this.passingMatchName = matchName;
     this.showDefault = false;

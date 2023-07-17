@@ -16,7 +16,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    
+
   }
 .container2{
     display: flex;
@@ -29,3 +29,24 @@
     color: white;
     background-color: red;
 }
+table {
+    width: 50%;
+    /* border: 1px solid black; */
+    /* overflow-x: auto;
+    overflow-y: hidden; */
+    /* min-width: 500px; */
+    border: 1px solid black;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+  }
+  td, th {
+    text-align: left;
+    padding: 8px;
+  }
+  th{
+    color: red;
+  }
+  tr:nth-child(odd) {
+    background-color: rgb(241, 241, 233);
+  }
